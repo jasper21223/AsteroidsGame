@@ -42,9 +42,18 @@ public void draw()
   	arrAst.get(o).show();
   }
 
-   for(int o = 0; o < arrBull.size(); o++){
+  for(int o = 0; o < arrBull.size(); o++){
   	arrBull.get(o).move();
   	arrBull.get(o).show();
+
+  	if(arrBull.get(o).getmyCenterX()==500 || arrBull.get(o).getmyCenterX() == 0){
+  		arrBull.remove(o);
+  		o--;
+
+  	}else if(arrBull.get(o).getmyCenterY()==500 || arrBull.get(o).getmyCenterY() == 0){
+  		arrBull.remove(o);
+  		o--;
+  	}
   }
 
   for(int i = 0 ; i < arrAst.size(); i++){
@@ -56,6 +65,7 @@ public void draw()
 		}
 	}
   }
+
 }
 
 public void keyPressed(){
